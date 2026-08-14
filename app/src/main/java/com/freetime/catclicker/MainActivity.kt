@@ -184,7 +184,7 @@ fun ShopScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Text(
-                text = "Your Cats: $cats $",
+                text = "Your Cats: $cats",
                 style = MaterialTheme.typography.headlineSmall
             )
 
@@ -225,7 +225,7 @@ fun ShopItem(
         Column(modifier = Modifier.weight(1f)) {
             Text(text = name, style = MaterialTheme.typography.titleLarge)
             Text(text = description, style = MaterialTheme.typography.bodyMedium)
-            Text(text = "Cost: $cost $", color = if (canAfford) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error)
+            Text(text = "Cost: $cost Cats", color = if (canAfford) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error)
         }
         Button(
             onClick = onBuy,
@@ -241,7 +241,7 @@ fun ShopItem(
 fun CatClickerPreview() {
     CatClickerTheme {
         CatClickerGame(
-            cats = 100,
+            cats = 0,
             clickPower = 1,
             autoClickRate = 0,
             onAddClick = {},
@@ -255,7 +255,7 @@ fun CatClickerPreview() {
 fun ShopPreview() {
     CatClickerTheme {
         ShopScreen(
-            cats = 100,
+            cats = 0,
             clickPower = 1,
             autoClickRate = 0,
             onBuyClickPower = {},
